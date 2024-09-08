@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja" id="top"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo1.png" width="32px" height="32px">
+    <title>matsumoto daiwa portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <header class="fixed-bar">
+        <div class="logo">
+            <a href="#top"> 
+                <img src="logo2.png" alt="ロゴ">
+            </a>
+        </div>
+
+        <script>
+            // ロゴをクリックしてトップにスムーズにスクロール
+            const logoLink = document.querySelector('.logo a');
+    
+            logoLink.addEventListener('click', function(event) {
+                event.preventDefault(); // デフォルトのアンカーリンク動作を無効化
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // スムーズスクロールを実装
+                });
+            });
+            // ローディング画面を非表示にするスクリプト
+            window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.display = 'none';
+            });
+
+        </script>
+
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#section2" class="menu-link">About</a></li>
+                <li><a href="#section1" class="menu-link">Works</a></li>
+                <li><a href="#section3" class="menu-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+        
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            window.addEventListener('scroll', function() {
+                var bar = document.querySelector('.fixed-bar');
+                if (window.scrollY > 50) {
+                    bar.classList.add('scrolled');
+                } else {
+                    bar.classList.remove('scrolled');
+                }
+            });
+        </script>
+
+    </header>
+
+    <div class="my-prf1">
+        <h2>Portfolio Website.</h2>
+        <p>2019年4月〜2024年6月</p>
+        <div class="main-photo1">
+            <img src="hed.png" alt="写真">
+        </div>
+    </div>
+
+    <section id="section2"><h2>About</h2>
+        <div class="main-photo">
+            <img src="img.png" alt="写真" width="300px" height="auto">
+        </div>
+        <div class="my-prf">
+            <h1>松本大和</h1>
+            <h3>MATSUMOTO DAIWA</h3>
+            <p>東京造形大学造形学部デザイン学科インダストリアルデザイン専攻領域４年</p>
+            <h2>行動力と沢山のアイデアを出すのが得意です</h2>
+            <h2>ワクワクするような体験をユーザーに届けられる</h2>
+            <h2>クリエーターを目指してます！</h2>
+        </div>
+
+        <div class="my-log">
+            <h3>略歴</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>２００３年</th>
+                        <td>愛知県安城市で生まれる</td>
+                    </tr>
+
+                    <tr>
+                        <th>２０１２年</th>
+                        <td>硬式テニスを始める </td>
+                    </tr>
+
+                    <tr>
+                        <th>２０１５年</th>
+                        <td>東村山市立東村山第三中学に入学  軟式テニス部に入部</td>
+                    </tr>
+
+                    <tr>
+                        <th>２０１８年</th>
+                        <td>東村山市立東村山第三中学を卒業  比叡山延暦寺で修行を体験</td>
+                    </tr>
+                        <tr>
+                        <th></th>
+                        <td>私立大成高等学校に入学  軽音部に入部 生徒会に立候補 書記</td>
+                    </tr>
+                    <tr>
+                        <th>２０１９年</th>
+                        <td>河合塾美術研究所に入塾  生徒会に再度立候補 委員会長 風紀委員長</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>高校生国際美術コンクールで高校生国際美術展実行委員会名誉会長賞を受賞</td>
+                    </tr>
+                    <tr>
+                        <th>２０２１年</th>
+                        <td>私立大成高等学校を卒業</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>東京造形大学造形学部デザイン学科インダストリアルデザイン専攻領域に入学</td>
+                    </tr>
+                    <tr>
+                        <th>２０２５年</th>
+                        <td>東京造形大学造形学部デザイン学科インダストリアルデザイン専攻領域を卒業見込</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </section>
+
+        <div class="mozi">
+            <h3>大切にしていること</h3>
+            <h2>ユーザーに喜んでいただける提案を</h2>
+            <div class="align-left">
+                <p>制作の上で自分が心がけてていることは、「このプロダクトを使うときにどう感じるのか」です。</p>
+                <p>私は、体験をデザインの主軸で考えておりその中でワクワクや感動をどのように届けるかを考えて</p>
+                <p>きました。体験の主軸は人であり、自分自身の経験が最高の提案に繋がると考えます。その為に</p>
+                <p>分野を超えて様々な事に積極的に挑戦し学びを通し、多くの人に感動やワクワクした体験を共有</p>
+                <p>することを大切にしています。デザインを通して、人々の生活をより良くし、沢山の感動や喜びを</p>
+                <p>届けられるデザイナーを目指しています。</p>
+            </div>
+        </div>            
+
+        <div class="hobby">
+            <h3>趣味</h3>
+            <ul>
+                <li>
+                    <img src="photo1.png" alt="趣味1">
+                    <p>バドミントン</p>
+                </li>
+                <li>
+                    <img src="photo2.png" alt="趣味2">
+                    <p>写真</p>
+                </li>
+                <li>
+                    <img src="photo3.png" alt="趣味3">
+                    <p>旅行</p>
+                </li>
+                <li>
+                    <img src="photo4.png" alt="趣味3">
+                    <p>ドライブ</p>
+                </li>
+            </ul>
+        </div>
+
+        <!--<div class="main-photo">
+        <img src="skill.jpg" alt="写真" width="1000px" height="">
+        </div>-->
+    </section>
+
+    <div class="content">
+        <section id="section1"><h2>Works</h2>
+            <div class="love1">
+                <div class="image-container">
+                    <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works1.html"><img src="1.jpg" alt="STUDY TIME" >
+                        <div class="overlay">
+                            <h4>スケジュール管理、モチベーションの向上を目的にしたIotプロダクト</h4>
+                        </div>
+                    </a>
+                </div>
+                <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works1.html"><h3>1.STUDY TIME</h3></a>
+                <p>2023年4月〜2023年6月</p>
+            </div>
+
+            <div class="love2"></a>
+                <div class="image-container">
+                    <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works2.html">
+                        <img src="2.jpg" alt="助けあえーる" >
+                        <div class="overlay">
+                            <h4>美大生が学内で他学科の学生と繋がるためのサービス</h4>
+                        </div>
+                    </a>
+                </div>
+                <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works2.html"><h3>2.助けあえーる</h3></a>
+                <p>2023年9月〜12月 デザイン調査課題</p>
+            </div>
+
+            <div class="love3">
+                <div class="image-container">
+                    <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works3.html"><img src="3.jpg" alt="2030年ワクワクする車" >
+                        <div class="overlay">
+                            <h4>2030年、私の地元でワクワクするスモールモビリティのメーターGUI</h4>
+                        </div>
+                    </a>
+                </div>
+                <a href="Users/matsumotodaiwa/Documents/制作中/qasite/works3.html"><h3>3.2030年ワクワクする車</h3></a>
+                <p>2024年3月18年〜2024年3月21日 ダイハツ工業株式会社 後期インターンシップ課題</p>
+            </div> 
+
+            <div class="love4">
+                <div class="image-container">
+                    <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works4.html"><img src="4.jpg" alt="スペーシアのメーターGUI" >
+                        <div class="overlay">
+                            <h4>スズキスペーシアのメーターGUIを提案した</h4>
+                        </div>
+                    </a>
+                </div>
+                <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works4.html"><h3>4.スペーシアのメーターGUI</h3></a>
+                <p>2024年2月5日〜2月9日 株式会社スズキ デザイン実習</p>
+            </div>
+
+            <!--<div class="love5">
+                <div class="image-container">
+                    <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works5.html"><img src="5.jpg" alt="「遊び」のための車とデジタルコンテンツ" >
+                        <div class="overlay">
+                            <h4>2030年 電動化が主流の中、新しい価値を持つデジタルコンテンツの提案</h4>
+                        </div>
+                    </a>
+                </div>
+                <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works5.html"><h3>「遊び」のための車とデジタルコンテンツ</h3></a>
+                <p>2024年5月 株式会社マツダE&T デザイン課題</p>
+            </div>-->
+
+            <div class="love6">
+                <div class="image-container">
+                    <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works6.html"><img src="6.jpg" alt="Other Works" >
+                        <div class="overlay">
+                            <h4>その他作品、写真、デッサン等</h4>
+                        </div>
+                    </a>
+                </div>
+                <a href="/Users/matsumotodaiwa/Documents/制作中/qasite/works6.html"><h3>5.Other Works</h3></a>
+                <p>2019年7月〜2023年12月</p>
+            </div>
+
+        </section>
+
+        <section id="section3"><h2>Contact</h2>
+            <div class="word">
+               <h3>東京造形大学 造形学部 デザイン学科</h3>
+               <h3>インダストリアルデザイン専攻領域 4年 松本 大和</h3>
+               <p>E-mail:a12107035@zokei.ac.jp</p>
+               <p>tell:080-3392-5628</p>
+
+              </div>
+            </div>
+            <div class="blink">"thanks for viewing my portfoli"</div>
+        </section>
+    </div>
+
+    <div class="bar">
+        <h3>SNS</h3>
+        <div class="sns">
+            <a href="mailto:a12107035@zokei.ac.jp">
+            <img src="mail.jpg" alt="mail" width="40px"height="40px"/></a>
+            <a href="https://www.instagram.com/dddaiwa_/">
+            <img src="insta.jpg" alt="Instagram" width="40px" height="40px" /></a>
+        </div>
+    </div>
+
+</body>
+</html>
+
