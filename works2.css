@@ -1,0 +1,624 @@
+@font-face {
+    font-family: 'Impact','iroha 32 kaede', sans-serif;
+    src: url('fonts/Impact.woff2') format('woff2'),
+         url('fonts/Impact.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap');
+body, h1, h2, h3, a, li {
+    font-family: 'Impact', sans-serif, 'Noto Sans JP', 'Futura';
+    font-weight: 900;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+p {
+    font-family: Helvetica, sans-serif;
+}
+
+/* ローディング画面全体のスタイル（背景を白に） */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white; /* 背景色を白に */
+    z-index: 9999; /* 一番上に表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ローディングテキストのスタイル */
+.loading-text {
+    font-size: 40px; /* テキストの高さを40px相当に */
+    color: black; /* テキストの色を黒に */
+    animation: fade 1.5s ease-in-out infinite; /* 点滅するアニメーション */
+}
+
+/* 点滅するアニメーション */
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .fixed-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .project {
+        margin-bottom: 30px;
+    }
+}
+
+#section1 {
+    margin-bottom: 100px; /* Worksセクションとその下の要素（写真など）の間に余白を追加 */
+}
+
+#section1 h3 {
+    margin-top: 0; /* テキストの上側のマージンを減らす */
+    margin-bottom: 0; /* 必要に応じて下側のマージンも調整 */
+}
+
+#section1 p {
+    margin-top: 0; /* 説明文とテキストの距離も調整 */
+    margin-bottom: 0;
+}
+
+.love1, .love2, .love3, .love4, .love5, .love6, .love7 {
+    margin-top: 50px; /* 各作品の写真の上に余白を追加 */
+    text-align: center; /* 中央寄せ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.love1 img, .love2 img, .love3 img, .love4 img, .love5 img, .love6 img {
+    margin-bottom: 10px; /* 写真とタグの間の距離を調整 */
+    display: block;
+    text-align: center;
+    max-width: 100%; /* 画像のサイズを調整 */
+    height: auto;
+}
+
+.love7 img {
+    margin-bottom: 250px; /* 写真とタグの間の距離を調整 */
+    display: block;
+    text-align: center;
+    max-width: 100%; /* 画像のサイズを調整 */
+    height: auto;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 1000px; /* 画像の最大幅を設定 */
+    margin: 0 auto; /* 画像を中央に配置 */
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.fixed-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.fixed-bar.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    margin-right: 60px;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.fixed-bar .menu {
+    display: flex;         /* フレックスボックスを使用 */
+    flex-direction: row;   /* 常に横方向に並べる */
+    justify-content: center; /* メニューを中央に配置 */
+    align-items: center;    /* 垂直方向の中央揃え */
+}
+
+.fixed-bar .menu ul {
+    display: flex;         /* 横並びにする */
+    flex-direction: row;   /* 常に横方向に並べる */
+    justify-content: center; /* メニューを中央揃え */
+    align-items: center;   /* 垂直方向も中央に揃える */
+    list-style: none;      /* リストのデフォルトのマーカーを無効にする */
+    margin: 0;             /* 不要な余白を削除 */
+    padding: 0;            /* 不要なパディングを削除 */
+}
+
+.fixed-bar .menu ul li {
+    padding: 0 15px; /* リスト項目に左右の余白を設定 */
+}
+
+.fixed-bar .menu ul li a {
+    text-decoration: none; /* アンカーの装飾を削除 */
+    font-size: 18px;       /* 必要に応じてフォントサイズを設定 */
+    color: rgb(29, 29, 29);
+}
+
+.content {
+    margin-top: 120px; /* ヘッダーの高さを考慮 */
+}
+
+.content p {
+    font-size: 14px;
+    color: rgb(96, 109, 123);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section {
+    padding: 60px 20px; /* 十分なパディングを追加して余白を確保 */
+    background-color: #ffffff;
+    margin-bottom: 50px;
+}
+
+#section1, #section2, #section3 {
+    padding-top: 120px; /* ヘッダーと重ならないよう余白を追加 */
+}
+
+#section2, #section3 {
+    margin-top: 100px; /* セクション1の下にスペースを追加 */
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 0px);
+    background-color: white;
+    color: rgb(96, 109, 123);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    letter-spacing: 8px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 5px;
+    color: rgb(96, 109, 123);
+}
+
+.menu-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-items li {
+    margin-right: 20px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    margin-top: -65px;
+    margin-bottom: -35px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.main-photo img {
+    border-radius: 6px;
+}
+
+.my-prf {
+    text-align: center;
+}
+
+h1 {
+    padding: 24px 0;
+    margin: 0 auto;
+    font-size: 55px;
+    color: rgb(96, 109, 123);
+}
+
+h2 {
+    font-size: 30px;
+    color: rgb(96, 109, 123);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 18px;
+    color: rgb(96, 109, 123);
+}
+
+h4 {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+.image-container {
+    position: relative;
+    width: 1000px;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* オーバーレイのスタイル */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 初期状態では透明 */
+    transition: opacity 0.3s ease;
+}
+
+/* ホバー時にオーバーレイを表示 */
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+
+.my-log {
+    width: 80%; /* テキストボックスの幅を指定 */
+    max-width: 950px;  /* 全体の幅を1000pxに設定 */
+    margin: 20px auto; /* 上下にマージンを追加して中央に配置 */
+    padding: 20px; /* 内側のパディングを追加 */
+    border: 1px solid #ccc; /* ボーダーを追加（必要に応じて調整） */
+    border-radius: 8px; /* 角を丸くする（必要に応じて調整） */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* シャドウを追加（必要に応じて調整） */
+    background-color: #f9f9f9; /* 背景色を設定（必要に応じて調整） */
+    text-align: left; /* 内部のテキストは左揃え */
+}
+
+.my-log h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: (96, 109, 123);
+}
+
+.my-log table {
+    width: 100%;
+    border-collapse: collapse; /* テーブルのセルの境界線を重ねる */
+}
+
+.my-log th, .my-log td {
+    padding: 10px;         /* セルの内側に余白を追加 */
+    border: 1px solid #ddd; /* セルの境界線 */
+}
+
+.my-log th {
+    background-color: #f4f4f4; /* ヘッダーセルの背景色 */
+    font-size: 15px;
+    color: (96, 109, 123);
+}
+
+.my-log td {
+    background-color: #fff; /* セルの背景色を追加 */
+    font-size: 15px;
+    color: (96, 109, 123);
+}
+
+/* 列幅を指定 */
+.my-log th:first-child,
+.my-log td:first-child {
+    width: 150px; /* 年度の列幅を指定 */
+}
+
+.my-log th:last-child,.my-log td:last-child {
+    width: 1000px; /* 残りの幅を指定 */
+}
+
+.mozi {
+    width: 80%; /* テキストボックスの幅を指定 */
+    max-width: 950px; /* 最大幅を設定（必要に応じて調整） */
+    margin: 20px auto; /* 上下にマージンを追加して中央に配置 */
+    padding: 20px; /* 内側のパディングを追加 */
+    border: 1px solid #ccc; /* ボーダーを追加（必要に応じて調整） */
+    border-radius: 8px; /* 角を丸くする（必要に応じて調整） */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* シャドウを追加（必要に応じて調整） */
+    background-color: #f9f9f9; /* 背景色を設定（必要に応じて調整） */
+}
+
+.mozi h2 {
+    font-size: 25px;
+    text-align: center; /* h2をセンター揃え */
+    margin-bottom: 20px; /* 下にマージンを追加（必要に応じて調整） */
+    color: rgb(0, 0, 0);
+}
+
+.mozi p {
+    text-align: center; /* pを中央揃え */
+    margin: 0; /* テキストのデフォルトのマージンを削除 */
+    line-height: 1.6; /* 行間を調整（必要に応じて調整） */
+    color: rgb(0, 0, 0);
+}
+
+.align-left {
+    text-align: left; /* 左揃え */
+    max-width: 800px; /* 適切な幅に制限 */
+    margin: 0 auto; /* 中央寄せ */
+    text-indent: 3em; /* 段落の最初にインデントを追加 */
+}
+
+.align-left p {
+    text-align: left; /* .align-left 内の <p> 要素を左揃えに */
+    margin: 0 auto; /* 左揃えであっても中央寄せの状態を保つためのスタイル */
+    max-width: 800px; /* 適切な幅に制限してテキストが読みやすくなるように調整 */
+}
+
+
+
+.hobby {
+    text-align: center; /* テキストを中央揃え */
+    margin: 20px auto; /* 上下にマージンを追加して中央に配置 */
+}
+
+.hobby ul {
+    list-style: none; /* リストのデフォルトのスタイルを削除 */
+    padding: 0; /* パディングを削除 */
+    display: flex; /* フレックスボックスを使って横並び */
+    justify-content: center; /* 中央揃え */
+    width: 1000px; /* コンテナの幅を1000pxに設定 */
+    margin: 0 auto; /* コンテナを中央に配置 */
+}
+
+.hobby li {
+    display: flex; /* アイテムをフレックスボックスで配置 */
+    flex-direction: column; /* 縦方向に配置 */
+    align-items: center; /* アイテムを中央揃え */
+}
+
+.hobby img {
+    width: 240px; /* 画像の幅を指定 */
+    height: auto; /* 高さは自動調整 */
+    margin-bottom: 10px; /* 画像とテキストの間にマージンを追加 */
+}
+
+.hobby p {
+    margin: 0; /* テキストのデフォルトのマージンを削除 */
+}
+
+.word {
+    text-align: center;
+    margin-top: 100px;
+    color: rgb(96, 109, 123);
+}
+
+.sns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    list-style: none;
+    margin: auto;
+}
+
+.sns img {
+    max-width: 100%;
+    margin: 5px;
+    margin-bottom: 50px;
+}
+
+
+@keyframes blink {
+    0%, 100% { color: rgb(255, 230, 0); background: rgb(96, 109, 123); }
+    25%, 75% { color: rgb(96, 109, 123); background: #E4E4E4; }
+    50% { color: rgb(75, 162, 175); background: rgb(96, 109, 123); }
+}
+
+.blink {
+    margin-top: 50px;
+    font-size: 16pt;
+    margin: auto;
+    text-align: center;
+    animation-name: blink;
+    width: 100%;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    pointer-events: none;
+}
+
+.bar {
+    width: 100%;
+    height: 324px;
+    flex-shrink: 0;
+    background: #E4E4E4;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平中央 */
+    justify-content: center; /* 垂直中央 */
+}
+
+@media (max-width: 768px) {
+    .fixed-bar {
+        flex-direction: column; /* 縦方向に配置 */
+        align-items: center; /* コンテンツを中央揃え */
+        justify-content: center; /* 縦方向の中央揃え */
+        height: auto; /* 高さを自動に */
+    }
+
+    .logo {
+        margin-right: 0; /* スマホ時にマージンを削除 */
+        margin-bottom: 10px; /* ロゴの下に余白を追加 */
+    }
+
+    .menu {
+        width: 100%; /* メニューの幅を100%に */
+        justify-content: center; /* メニューを中央揃え */
+    }
+
+    .fixed-bar .menu ul li {
+        padding: 0 10px; /* スマホ用に左右の余白を少し小さく調整 */
+    }
+
+    /* さらに、各メニュー項目のスタイル調整が必要な場合 */
+    .fixed-bar .menu ul {
+        flex-direction: row; /* スマホ表示でも常に横並びを維持 */
+    }
+
+    .main-photo1 {
+        height: auto; /* 高さを自動にして比率を保つ */
+        margin-bottom: 20px; /* 下のマージンを調整 */
+    }
+
+    .main-photo1 img {
+        width: 100%; /* 幅を100%にして画面に合わせる */
+        height: auto; /* 高さは自動で調整 */
+        object-fit: cover; /* 画像の比率を保ちつつ、コンテナに合わせる */
+    }
+
+    .hobby ul {
+        flex-direction: column; /* 縦方向に並べる */
+        margin: 0 auto; /* リストを中央に揃える */
+    }
+
+    .hobby li {
+        width: 100%; /* 幅を100%に */
+        max-width: 300px; /* リストアイテムの最大幅 */
+        margin-bottom: 20px; /* 各アイテムの間に余白を追加 */
+    }
+
+    .hobby img {
+        width: 100%; /* 画像の幅を100%に */
+        max-width: 300px; /* 画像の最大幅 */
+        height: auto; /* 高さを自動調整 */
+    }
+
+    .hobby p {
+        text-align: center; /* テキストも中央揃え */
+    }
+
+
+    /* セクション1の作品写真を縦一列に */
+    .love1, .love2, .love3, .love4, .love5, .love6,.love7 {
+        flex-direction: column;
+    }
+
+    .love1 img, .love2 img, .love3 img, .love4 img, .love5 img, .love6 img .love7 img{
+        width: 100%; /* 幅を100%に設定 */
+        height: auto; /* 高さは自動で比率を保持 */
+    }
+
+    /* その他必要な要素を調整する場合 */
+    .image-container {
+        width: 100%;
+    }
+
+    .my-prf h1 {
+        font-size: 30px;
+        margin-bottom: -50px;
+    }
+
+    .my-prf h2 {
+        font-size: 20px; /* スマホ時のフォントサイズ */
+    }
+
+    .my-prf h3 {
+        font-size: 26px;
+    }
+
+    .my-prf p {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        padding-top: 50px; /* ヘッダーと重ならないよう余白を追加 */
+    }
+
+
+
+}

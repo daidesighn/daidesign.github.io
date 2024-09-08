@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo1.png" width="32px" height="32px">
+    <title>松本大和のポートフォリオ</title>
+    <link rel="stylesheet" href="works4.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-text">Loading...</div>
+    </div>
+    <header class="fixed-bar">
+        <div class="logo">
+            <a href="file:///Users/matsumotodaiwa/Documents/制作中/qasite/style.html#top" id="logo-link">
+                <img src="logo2.png" alt="ロゴ">
+            </a>
+        </div>
+        
+        <script>
+            const logoLink = document.querySelector('#logo-link');
+        
+            logoLink.addEventListener('click', function(event) {
+                event.preventDefault(); // デフォルトのリンク遷移を防ぐ
+        
+                // fileを開くために、ウィンドウの位置を変更
+                window.location.href = "file:///Users/matsumotodaiwa/Documents/制作中/qasite/style.html#top";
+            });
+            // ローディング画面を非表示にするスクリプト
+            window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.display = 'none';
+            });
+        </script>
+        
+
+        <nav class="menu">
+            <ul>
+                <li><a href="file:///Users/matsumotodaiwa/Documents/%E5%88%B6%E4%BD%9C%E4%B8%AD/qasite/style.html#section2" class="menu-link">About</a></li>
+                <li><a href="file:///Users/matsumotodaiwa/Documents/%E5%88%B6%E4%BD%9C%E4%B8%AD/qasite/style.html#section1" class="menu-link">Works</a></li>
+                <li><a href="file:///Users/matsumotodaiwa/Documents/%E5%88%B6%E4%BD%9C%E4%B8%AD/qasite/style.html#section3" class="menu-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            window.addEventListener('scroll', function() {
+                var bar = document.querySelector('.fixed-bar');
+                if (window.scrollY > 50) {
+                    bar.classList.add('scrolled');
+                } else {
+                    bar.classList.remove('scrolled');
+                }
+            });
+        </script>
+
+    </header>
+        
+
+    <div class="content">
+        <h2>2030年ワクワクする車</h2>
+        <h3>2030年、私の地元でワクワクするスモールモビリティのメーターGUI</h3>
+        <p>2024年3月18年〜2024年3月21日 ダイハツ工業株式会社 後期インターンシップ課題</p>
+
+        <div class="love1">
+            <div class="image-container">
+                <img src="4.png" alt="2030年ワクワクする車">
+            </div>
+        </div>
+
+        <div class="love2">
+            <div class="image-container">
+                <img src="4-1.png" alt="2030年ワクワクする車">
+            </div>
+        </div>
+
+        <div class="love3">
+            <div class="image-container">
+                <img src="4-2.png" alt="2030年ワクワクする車" >
+            </div>
+        </div>
+
+        <div class="love4">
+            <div class="image-container">
+                <img src="4-3.png" alt="2030年ワクワクする車" >
+            </div>
+        </div>
+
+    </div>
+                
+    <div class="blink">"thanks for viewing my portfolio"</div>
+    <div class="bar">
+        <h3>SNS</h3>
+        <div class="sns">
+            <a href="mailto:a12107035@zokei.ac.jp">
+                <img src="mail.jpg" alt="mail" width="40px"height="40px"/>
+            </a>
+            <a href="https://www.instagram.com/dddaiwa_/">
+                <img src="insta.jpg" alt="Instagram" width="40px" height="40px" />
+            </a>
+        </div>
+    </div>
+
+</body>
+
